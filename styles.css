@@ -1,0 +1,21 @@
+body {
+    font-family: sans-serif;
+    font-size: 200%;
+    background-color: teal;
+    color: white;
+}
+
+#correct {
+    padding: 5px;
+    background-color: lightgreen;
+}
+
+#incorrect {
+    padding: 5px;
+    background-color: lightcoral;
+}
+
+#levelUp {
+    padding: 5px;
+    background-color: lightblue;
+}
