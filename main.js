@@ -18,6 +18,7 @@ $(function () {
     var pointsPerAnswer = 1;
     var numberUntilChange = 5;
     var questionsToLevelUp = 5;
+    var level = 1;
     var randomNumber1 = Math.floor(Math.random() * (12 - 0 + 1)) + 0;
     var randomNumber2 = Math.floor(Math.random() * (12 - 0 + 1)) + 0;
     var answer = randomNumber1 * randomNumber2;
@@ -84,6 +85,7 @@ $(function () {
                     questionsToLevelUp = questionsToLevelUp + 5;
                     numberUntilChange = questionsToLevelUp;
                     pointsPerAnswer = pointsPerAnswer * 2;
+                    level = level + 1;
                     $("#levelUp").show();
                     setTimeout(function () {
                         $("#levelUp").hide();
@@ -110,6 +112,7 @@ $(function () {
                     pointCount = 0;
                 }
                 pointsPerAnswer = 1;
+                level = 1;
                 return false;
             }
         }
@@ -117,5 +120,8 @@ $(function () {
     };
     setInterval(function () {
         $("#pointCount").html(pointCount);
+        $("#levelNumber").html(level);
+        $("#questionsUntilLevelUp").html(numberUntilChange);
+        $("#pointsPerAnswer").html(pointsPerAnswer);
     }, 100);
 });

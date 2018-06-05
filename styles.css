@@ -3,19 +3,50 @@ body {
     font-size: 200%;
     background-color: teal;
     color: white;
+    padding: 1em;
 }
 
 #correct {
-    padding: 5px;
+    position: fixed;
+    bottom: 1em;
+    padding: 10px;
+    height: 1em;
+    color: teal;
+    width: 100%;
+    text-align: center;
     background-color: lightgreen;
 }
 
 #incorrect {
-    padding: 5px;
+    position: fixed;
+    bottom: 1em;
+    padding: 10px;
+    height: 1em;
+    color: teal;
+    width: 100%;
+    text-align: center;
     background-color: lightcoral;
 }
 
 #levelUp {
-    padding: 5px;
+    position: fixed;
+    bottom: 3em;
+    padding: 10px;
+    height: 1em;
+    color: teal;
+    width: 100%;
+    text-align: center;
     background-color: lightblue;
+}
+
+#stats {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    padding: 20px;
+    border: solid 5px goldenrod;
+    background-color: yellow;
+    border-radius: 15px;
+    color: teal;
 }

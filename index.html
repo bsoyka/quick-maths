@@ -10,11 +10,16 @@
 
 <body>
     <h1>Quick Math</h1>
-    <h2>Points: <span id="pointCount"></span></h2>
     <div id="question"></div>
     <div id="correct">Correct!</div>
     <div id="incorrect">Sorry, try this one.</div>
     <div id="levelUp">Level up! You now get twice as many points per correct answer.</div>
+    <div id="stats">
+        <div>Points: <span id="pointCount"></span></div>
+        <div>Level: <span id="levelNumber"></span></div>
+        <div>Questions until next level: <span id="questionsUntilLevelUp"></span></div>
+        <div>Points per correct answer: <span id="pointsPerAnswer"></span></div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </body>
