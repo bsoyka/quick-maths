@@ -124,4 +124,33 @@ $(function () {
         $("#questionsUntilLevelUp").html(numberUntilChange);
         $("#pointsPerAnswer").html(pointsPerAnswer);
     }, 100);
+    var storageDash = document.getElementById("storageDash");
+    if (window.localStorage) {
+        storageDash.innerHTML = "<button id='saveProgress'>Save progress</button><button id='restoreProgress'>Restore progress</button>";
+        var saveProgress = document.getElementById("saveProgress");
+        saveProgress.addEventListener("click", function () {
+            var data = {
+                points: pointCount,
+                currentLevel: level,
+                questionsLeft: numberUntilChange,
+                pointsPerCorrectAnswer: pointsPerAnswer
+            };
+            localStorage.setItem("quickMathData", JSON.stringify(data));
+        });
+        var restoreProgress = document.getElementById("restoreProgress");
+        restoreProgress.addEventListener("click", function () {
+            var data = JSON.parse(localStorage.getItem("quickMathData"));
+            // console.log(typeof data.points);
+            pointCount = data.points;
+            // console.log(typeof data.currentLevel);
+            level = data.currentLevel;
+            // console.log(typeof data.questionsLeft);
+            numberUntilChange = data.questionsLeft;
+            // console.log(typeof data.pointsPerCorrectAnswer);
+            pointsPerAnswer = data.pointsPerCorrectAnswer;
+            $("#restoreProgress").hide();
+        });
+    } else {
+        storageDash.innerHTML = "Your browser does not support local storage.";
+    }
 });
